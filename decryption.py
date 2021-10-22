@@ -34,7 +34,7 @@ class ROTDecryption:
     def choose_cipher(self) -> NoReturn:
         chosen_num = int(input("Pick number of chosen cipher:\n>"))
         self.picked_cipher = list(self.saved_ciphers)[chosen_num-1]
-        self.rot_key = self.saved_ciphers[self.picked_cipher]
+        self.rot_key = int(self.saved_ciphers[self.picked_cipher])
 
     def decrypt_rot47cipher(self) -> NoReturn:
         for num in range(len(self.picked_cipher)):
