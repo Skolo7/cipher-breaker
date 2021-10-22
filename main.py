@@ -1,23 +1,14 @@
 from inspect import cleandoc
 
 
-def menu():
-    while True:
-        print(cleandoc(
-            """
-            1. Zakoduj podany wyraz przy użyciu rot-13!
-            2. Zakoduj podany wyraz przy użyciu rot-47!
-            3. Odkoduj wyraz!
-            4. Wyjdź z programu!
-            """
-        ))
-        choice: int = int(input("> "))
-
-
-def say_goodbey():
-    print("Bay")
-    exit(0)
+def show_menu():
+    print(cleandoc("""
+    1. Encrypt text in ROT13
+    2. Encrypt text in ROT47
+    3. Decrypt ciphers
+    4. Exit
+    """))
 
 
 if __name__ == '__main__':
-    menu()
+    show_menu()
