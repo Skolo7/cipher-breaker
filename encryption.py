@@ -53,3 +53,5 @@ class ROT47Encryption(ROT13Encryption):
             else:
                 self.encrypted_text += chr(pos)
         print(self.show_encrypted_text())
+        self.result[self.cipher_type] = self.encrypted_text
+        self.save_cipher()

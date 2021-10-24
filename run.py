@@ -1,5 +1,3 @@
-# PSL
-from inspect import cleandoc
 
 # Own
 from decryption import ROTDecryption
