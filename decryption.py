@@ -26,15 +26,22 @@ class ROTDecryption:
     def get_saved_ciphers(self) -> NoReturn:
         with open('ciphers.txt', 'r') as ciphers_file:
             self.saved_ciphers = {line[6:-3]: line[1:3] for line in ciphers_file}
+        self.show_saved_ciphers()
 
     def show_saved_ciphers(self) -> NoReturn:
         for count, key in enumerate(self.saved_ciphers, 1):
             print(f"{count}.{key}")
+        self.choose_cipher()
 
     def choose_cipher(self) -> NoReturn:
         chosen_num = int(input("Pick number of chosen cipher:\n>"))
-        self.picked_cipher = list(self.saved_ciphers)[chosen_num-1]
+        self.picked_cipher = list(self.saved_ciphers)[chosen_num - 1]
         self.rot_key = int(self.saved_ciphers[self.picked_cipher])
+
+        if self.rot_key == 13:
+            self.decrypt_rot13cipher()
+        elif self.rot_key == 47:
+            self.decrypt_rot47cipher()
 
     def decrypt_rot47cipher(self) -> NoReturn:
         for num in range(len(self.picked_cipher)):
